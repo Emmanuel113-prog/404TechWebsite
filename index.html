@@ -1,68 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 Tech | Digital Freedom Hub</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 Tech — Digital Freedom Hub</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Matrix background -->
   <canvas id="matrix"></canvas>
 
-  <header>
-    <h1>⚡ 404 Tech</h1>
-    <p>Innovating Digital Freedom & Privacy</p>
+  <!-- Top header -->
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">404<span>Tech</span></div>
+      <div class="subtitle">Innovative tools & AI right on WhatsApp</div>
+    </div>
+
+    <nav class="top-actions">
+      <button id="musicToggle" class="icon-btn">🔊</button>
+      <a class="menu-btn" href="#ai">AI</a>
+      <a class="menu-btn" href="#groups">Groups</a>
+      <a class="menu-btn" href="#tools">Tools</a>
+      <a class="menu-btn" href="#gallery">Gallery</a>
+    </nav>
   </header>
 
-  <main>
-    <section class="intro">
-      <h2>Welcome to 404 Tech</h2>
-      <p>Your trusted hub for VPNs, hosting, and secure digital tools.</p>
-    </section>
-
-    <div class="buttons">
-      <a href="https://wa.me/254769769295" target="_blank" class="btn whatsapp">💬 Chat on WhatsApp</a>
-      <a href="https://chat.whatsapp.com/YOUR_GROUP_LINK" target="_blank" class="btn group">👥 Join WhatsApp Group</a>
-      <a href="https://t.me/YOUR_TELEGRAM_CHANNEL" target="_blank" class="btn telegram">📢 Telegram Channel</a>
+  <!-- Hero / carousel imitation -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Welcome to 404 Tech</h1>
+      <p>Dark-tech tools, WhatsApp AI bots & community groups — all in one place.</p>
+      <div class="cta-row">
+        <a class="cta" href="https://wa.me/254769769295" target="_blank">💬 Contact Nuch</a>
+        <a class="cta ghost" href="#ai">🤖 Explore AI Bots</a>
+      </div>
     </div>
-
-    <section class="cards">
-      <div class="card">
-        <h3>🔒 VPN Solutions</h3>
-        <p>Fast, encrypted access to the web — stay anonymous & secure.</p>
+    <div class="hero-right">
+      <div class="hero-cards">
+        <div class="stat-card neon green">
+          <div class="stat-icon">★</div>
+          <div class="stat-value">212</div>
+          <div class="stat-label">Stars</div>
+        </div>
+        <div class="stat-card neon blue">
+          <div class="stat-icon">⎇</div>
+          <div class="stat-value">877</div>
+          <div class="stat-label">Forks</div>
+        </div>
+        <div class="stat-card neon purple">
+          <div class="stat-icon">👁</div>
+          <div class="stat-value">4.2k</div>
+          <div class="stat-label">Views</div>
+        </div>
       </div>
-      <div class="card">
-        <h3>💡 Hosting & Tools</h3>
-        <p>Reliable web hosting and powerful online utilities for creators.</p>
-      </div>
-      <div class="card">
-        <h3>⚙️ Tech Support</h3>
-        <p>Need help setting up VPN or hosting? Contact the 404 Team anytime.</p>
-      </div>
-    </section>
-
-    <!-- Music Player -->
-    <div class="audio-control">
-      <button id="playPauseBtn">▶️ Play Music</button>
-      <audio id="bgAudio" loop>
-        <source src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/Changawa%20ft%20%20Wakadinali%20%20-%20Syndicate%20lyrics%20-%20Gengeton.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
     </div>
+  </section>
 
-    <!-- Photo Gallery -->
-    <section class="gallery">
-      <h2>📸 404 Tech Moments</h2>
-      <div class="gallery-grid">
-        <img src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/124.jpg" alt="Tech Image 1" />
-        <img src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/1758819254648.jpg" alt="Tech Image 2" />
-        <img src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/6462.jpg" alt="Tech Image 3" />
-      </div>
-    </section>
-  </main>
+  <!-- AI Bots -->
+  <section id="ai" class="section">
+    <h2>🪄 WhatsApp AI Chatbots</h2>
+    <p class="muted">Tap any bot to open it in WhatsApp.</p>
+    <div class="grid bots-grid">
+      <a class="bot" href="https://wa.me/18772241042" target="_blank"><strong>Microsoft Copilot</strong><span>wa.me/18772241042</span></a>
+      <a class="bot" href="https://wa.me/18002428478" target="_blank"><strong>ChatGPT</strong><span>wa.me/18002428478</span></a>
+      <a class="bot" href="https://wa.me/12014166644" target="_blank"><strong>Shmooz AI</strong><span>wa.me/12014166644</span></a>
+      <a class="bot" href="https://wa.me/447457403599" target="_blank"><strong>Jinni</strong><span>wa.me/447457403599</span></a>
+      <a class="bot" href="https://wa.me/447457403599" target="_blank"><strong>Wiz AI</strong><span>wa.me/447457403599</span></a>
+      <a class="bot" href="https://wa.me/447457403599" target="_blank"><strong>GuidGeek</strong><span>wa.me/447457403599</span></a>
+      <a class="bot" href="https://wa.me/27767346284" target="_blank"><strong>MobileGPT</strong><span>wa.me/27767346284</span></a>
+      <a class="bot" href="https://wa.me/34613288116" target="_blank"><strong>LuzAI</strong><span>wa.me/34613288116</span></a>
+      <a class="bot" href="https://wa.me/16204458887" target="_blank"><strong>Truora AI</strong><span>wa.me/16204458887</span></a>
+      <a class="bot" href="https://wa.me/918738030604" target="_blank"><strong>August AI</strong><span>wa.me/918738030604</span></a>
+      <a class="bot" href="https://wa.me/18442439728" target="_blank"><strong>HeyPat AI</strong><span>wa.me/18442439728</span></a>
+      <a class="bot" href="https://wa.me/16502234435" target="_blank"><strong>Dola AI</strong><span>wa.me/16502234435</span></a>
+    </div>
+  </section>
 
-  <footer>
-    © 2025 404 Tech | Owned by Nuch | Digital Freedom Awaits
+  <!-- Groups -->
+  <section id="groups" class="section">
+    <h2>👥 Join our WhatsApp Groups</h2>
+    <div class="groups-row">
+      <a class="group-btn neon green" href="https://chat.whatsapp.com/ISoJgaNSpfPI4oxuS4flUk?mode=wwc" target="_blank">Join Group 1</a>
+      <a class="group-btn neon blue" href="https://chat.whatsapp.com/CXvuzqNACLSAEs6OwzqGTd?mode=wwc" target="_blank">Join Group 2</a>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section id="tools" class="section">
+    <h2>🛠️ Tools</h2>
+    <div class="tools-row">
+      <a class="tool-card neon purple" href="https://t.me/Instagram_vidio_downlod_bot" target="_blank">Instagram Video Downloader</a>
+      <a class="tool-card neon cyan" href="https://t.me/Zenon_mediabot" target="_blank">TikTok Downloader (No watermark)</a>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section gallery-section">
+    <h2>📸 Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/124.jpg" alt="Image 1"></div>
+      <div class="gallery-item"><img src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/1758819254648.jpg" alt="Image 2"></div>
+      <div class="gallery-item"><img src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/6462.jpg" alt="Image 3"></div>
+    </div>
+  </section>
+
+  <!-- Audio (uses your uploaded file) -->
+  <div id="audioHolder" aria-hidden="true">
+    <audio id="bgAudio" loop preload="auto">
+      <source src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/Changawa%20ft%20%20Wakadinali%20%20-%20Syndicate%20lyrics%20-%20Gengeton.mp3" type="audio/mpeg">
+      Your browser does not support audio.
+    </audio>
+  </div>
+
+  <footer class="site-footer">
+    <div>© 2025 404 Tech — Owned by Nuch && OWEN THE GUY😎</div>
+    <div class="footer-links">
+      <a href="https://t.me/Instagram_vidio_downlod_bot" target="_blank">Instagram Video Bot</a> •
+      <a href="https://t.me/Zenon_mediabot" target="_blank">TikTok Bot</a> •
+      <a href="https://wa.me/254769769295" target="_blank">WhatsApp</a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
