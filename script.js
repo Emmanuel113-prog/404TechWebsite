@@ -28,3 +28,22 @@ window.addEventListener("resize", () => {
   canvas.height = window.innerHeight;
   canvas.width = window.innerWidth;
 });
+
+// === Music Control ===
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("playPauseBtn");
+  const audio = document.getElementById("bgAudio");
+  let playing = false;
+
+  btn.addEventListener("click", () => {
+    if (!playing) {
+      audio.play();
+      btn.textContent = "⏸ Pause Music";
+      playing = true;
+    } else {
+      audio.pause();
+      btn.textContent = "▶️ Play Music";
+      playing = false;
+    }
+  });
+});
