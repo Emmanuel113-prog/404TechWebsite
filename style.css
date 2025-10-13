@@ -1,4 +1,3 @@
-
 /* === 404 Tech Futuristic Theme === */
 * {margin:0;padding:0;box-sizing:border-box;}
 body {
@@ -34,11 +33,7 @@ header h1 {
 }
 header p {color:#94a3b8;}
 
-.intro {
-  margin:2rem auto;
-  max-width:600px;
-  color:#cbd5e1;
-}
+.intro {margin:2rem auto;max-width:600px;color:#cbd5e1;}
 
 .buttons {
   display:flex;
@@ -47,7 +42,6 @@ header p {color:#94a3b8;}
   gap:1rem;
   margin:1.5rem;
 }
-
 .btn {
   padding:10px 20px;
   border-radius:6px;
@@ -57,7 +51,6 @@ header p {color:#94a3b8;}
   transition:transform .3s, box-shadow .3s;
 }
 .btn:hover {transform:scale(1.05);}
-
 .whatsapp {background:#25d366;box-shadow:0 0 10px #25d366;}
 .group {background:#2563eb;box-shadow:0 0 10px #2563eb;}
 .telegram {background:#0088cc;box-shadow:0 0 10px #0088cc;}
@@ -82,6 +75,56 @@ header p {color:#94a3b8;}
   transform:translateY(-5px);
   box-shadow:0 5px 15px rgba(59,130,246,0.6);
 }
+
+/* Music Button */
+.audio-control {
+  margin:2rem auto;
+}
+#playPauseBtn {
+  background:linear-gradient(135deg,#2563eb,#1d4ed8);
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  padding:12px 24px;
+  cursor:pointer;
+  font-weight:600;
+  box-shadow:0 0 15px rgba(37,99,235,0.6);
+  transition:transform .2s,box-shadow .2s;
+}
+#playPauseBtn:hover {
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(59,130,246,0.9);
+}
+
+/* === Gallery Section === */
+.gallery {
+  text-align:center;
+  margin:3rem auto;
+  color:#e2e8f0;
+}
+.gallery h2 {
+  font-size:1.8rem;
+  color:#38bdf8;
+  margin-bottom:1rem;
+  text-shadow:0 0 10px #2563eb;
+}
+.gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1rem;
+  padding:0 1rem;
+}
+.gallery-grid img {
+  width:100%;
+  border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.6);
+  transition:transform .4s ease,box-shadow .4s ease;
+}
+.gallery-grid img:hover {
+  transform:scale(1.05);
+  box-shadow:0 6px 20px rgba(59,130,246,0.7);
+}
+
 footer {
   padding:1rem;
   color:#94a3b8;
