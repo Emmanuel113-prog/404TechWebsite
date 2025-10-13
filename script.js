@@ -1,101 +1,61 @@
-/* MATRIX RAIN ------------------------------------------------ */
+// Background matrix animation
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+const letters = "01";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+const drops = Array(Math.floor(columns)).fill(1);
 
-function resizeCanvas(){
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  initMatrix();
-}
-window.addEventListener("resize", resizeCanvas);
-
-let fontSize = 14;
-let columns = 0;
-let drops = [];
-
-function initMatrix(){
-  fontSize = Math.max(12, Math.floor(window.innerWidth / 80));
-  columns = Math.floor(window.innerWidth / fontSize);
-  drops = new Array(columns).fill(1);
-}
-resizeCanvas();
-
-const letters = "ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ0123456789@#$%^&*";
-function drawMatrix(){
-  ctx.fillStyle = "rgba(0,0,0,0.07)";
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle = "#00ff9d";
+function drawMatrix() {
+  ctx.fillStyle = "rgba(0,0,0,0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#0ff";
   ctx.font = fontSize + "px monospace";
-
-  for(let i=0;i<drops.length;i++){
-    const text = letters.charAt(Math.floor(Math.random()*letters.length));
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-    if(drops[i] * fontSize > canvas.height && Math.random() > 0.975){
-      drops[i] = 0;
-    }
+  drops.forEach((y, i) => {
+    const text = letters[Math.floor(Math.random() * letters.length)];
+    const x = i * fontSize;
+    ctx.fillText(text, x, y * fontSize);
+    if (y * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
     drops[i]++;
-  }
-}
-let matrixInterval = setInterval(drawMatrix, 55);
-
-/* MUSIC CONTROL ------------------------------------------------ */
-const audio = document.getElementById("bgAudio");
-const musicToggle = document.getElementById("musicToggle");
-let musicPlaying = false;
-
-// Attempt autoplay (many browsers block autoplay with sound).
-function tryAutoplay() {
-  audio.volume = 0.7;
-  audio.play().then(()=> {
-    musicPlaying = true;
-    setMusicIcon();
-  }).catch(()=> {
-    // autoplay blocked - stay paused until user interacts
-    musicPlaying = false;
-    setMusicIcon();
   });
 }
+setInterval(drawMatrix, 50);
 
-// set button icon / tooltip
-function setMusicIcon(){
-  musicToggle.textContent = musicPlaying ? "⏸" : "🔊";
-}
-
-musicToggle.addEventListener("click", () => {
-  if(!musicPlaying){
-    audio.play().then(()=> {
-      musicPlaying = true;
-      setMusicIcon();
-    }).catch(()=> {
-      // still blocked
-      musicPlaying = false;
-      setMusicIcon();
-      alert("Autoplay blocked — tap the button again to allow playback.");
-    });
+// Music toggle
+const audio = document.getElementById("bgAudio");
+const toggle = document.getElementById("musicToggle");
+let playing = false;
+toggle.addEventListener("click", () => {
+  playing = !playing;
+  if (playing) {
+    audio.play();
+    toggle.textContent = "🔈";
   } else {
     audio.pause();
-    musicPlaying = false;
-    setMusicIcon();
+    toggle.textContent = "🔊";
   }
 });
 
-// try autoplay once page loads
-window.addEventListener("load", () => {
-  // Small delay to let mobile browsers settle
-  setTimeout(tryAutoplay, 400);
-});
+// TV 404 animation
+const tvBtn = document.getElementById("tvBtn");
+const tvOutput = document.getElementById("tvOutput");
 
-/* SMOOTH SCROLL (for nav anchors) */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', e=>{
-    e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-});
-
-/* OPTIONAL: small interactive sparkle on gallery hover */
-document.querySelectorAll('.gallery-item img').forEach(img=>{
-  img.addEventListener('mouseenter', ()=>{ img.style.filter = 'contrast(1.05) saturate(1.05)'; });
-  img.addEventListener('mouseleave', ()=>{ img.style.filter = 'none'; });
+tvBtn.addEventListener("click", () => {
+  tvOutput.classList.remove("hidden");
+  const dots = tvOutput.querySelector(".loading-dots");
+  const text = tvOutput.querySelector(".coming-text");
+  const gallery = tvOutput.querySelector(".gallery-grid");
+  text.style.display = "none";
+  gallery.style.display = "none";
+  dots.style.display = "block";
+  setTimeout(() => {
+    dots.style.display = "none";
+    text.style.display = "block";
+    setTimeout(() => {
+      text.style.display = "none";
+      gallery.style.display = "flex";
+    }, 2000);
+  }, 2000);
 });
