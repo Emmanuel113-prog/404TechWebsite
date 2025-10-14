@@ -5,14 +5,59 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>404 Tech — Digital Freedom Hub</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* === TV 404 Styling === */
+    .tv-output.hidden { display: none; }
+    .tv-output {
+      text-align: center;
+      margin-top: 20px;
+      color: #0ff;
+    }
+    .loading-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      font-size: 2rem;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+    .tv-frame-box {
+      margin-top: 15px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 15px;
+      box-shadow: 0 0 25px #0ff;
+      padding: 10px;
+    }
+    .tv-frame-box iframe {
+      width: 100%;
+      height: 600px;
+      border-radius: 12px;
+      border: none;
+    }
+    .tv-header {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 8px;
+    }
+    .cta.small {
+      font-size: 0.9rem;
+      padding: 4px 10px;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Matrix background -->
   <canvas id="matrix"></canvas>
 
+  <!-- Top header -->
   <header class="site-header">
     <div class="brand">
       <div class="logo">404<span>Tech</span></div>
-      <div class="subtitle">Innovative tools, VPN, Hacking services, Mod apps, WhatsApp bots & AI Tools</div>
+      <div class="subtitle">Innovative tools, VPN, Hacking services, Mod Apps, WhatsApp bots & AI Tools</div>
     </div>
 
     <nav class="top-actions">
@@ -24,6 +69,7 @@
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-left">
       <h1>Welcome to 404 Tech</h1>
@@ -35,6 +81,7 @@
     </div>
   </section>
 
+  <!-- AI Bots -->
   <section id="ai" class="section">
     <h2>🪄 WhatsApp AI Chatbots</h2>
     <div class="grid bots-grid">
@@ -53,6 +100,7 @@
     </div>
   </section>
 
+  <!-- Groups -->
   <section id="groups" class="section">
     <h2>👥 Join our WhatsApp Groups</h2>
     <div class="groups-row">
@@ -61,6 +109,7 @@
     </div>
   </section>
 
+  <!-- Tools -->
   <section id="tools" class="section">
     <h2>🛠️ Tools</h2>
     <div class="tools-row">
@@ -70,6 +119,7 @@
     </div>
   </section>
 
+  <!-- MOD Apps -->
   <section id="mods" class="section">
     <h2>⚡ MOD Apps</h2>
     <div class="mods-list">
@@ -92,37 +142,53 @@
   <section id="tv404" class="section">
     <h2>📺 TV 404</h2>
     <button id="tvBtn" class="cta neon">Open TV 404</button>
+
     <div id="tvOutput" class="tv-output hidden">
-      <div class="loading-dots">● ● ●</div>
-      <p class="coming-text">Coming Soon...</p>
-      <div id="tvFrameContainer" class="hidden"></div>
+      <div class="loading-dots"><span>●</span><span>●</span><span>●</span></div>
+      <p class="coming-text">Loading 404 TV...</p>
+      <div id="tvFrameContainer" class="hidden tv-frame-box">
+        <div class="tv-header">
+          <button id="fullscreenBtn" class="cta small">📺 Fullscreen</button>
+        </div>
+        <iframe id="tvFrame" src="" allowfullscreen></iframe>
+      </div>
     </div>
   </section>
 
+  <!-- Audio -->
   <audio id="bgAudio" loop>
     <source src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/Changawa%20ft%20%20Wakadinali%20%20-%20Syndicate%20lyrics%20-%20Gengeton.mp3" type="audio/mpeg">
   </audio>
 
   <footer class="site-footer">
-    <div>© 2025 404 Tech — Owned by Nuch && OWEN THE GUY</div>
+    <div>© 2025 404 Tech — Owned by Nuch & Owen</div>
   </footer>
 
   <script>
-  const tvBtn = document.getElementById("tvBtn");
-  const tvOutput = document.getElementById("tvOutput");
-  const tvFrameContainer = document.getElementById("tvFrameContainer");
+    // === TV 404 Logic ===
+    const tvBtn = document.getElementById("tvBtn");
+    const tvOutput = document.getElementById("tvOutput");
+    const tvFrameContainer = document.getElementById("tvFrameContainer");
+    const tvFrame = document.getElementById("tvFrame");
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
 
-  tvBtn.addEventListener("click", () => {
-    tvOutput.classList.remove("hidden");
-    setTimeout(() => {
-      document.querySelector(".loading-dots").style.display = "none";
-      document.querySelector(".coming-text").style.display = "none";
-      tvFrameContainer.classList.remove("hidden");
-      tvFrameContainer.innerHTML = `<iframe src="https://www.kenyamoja.com" width="100%" height="600" style="border:none;border-radius:10px;"></iframe>`;
-    }, 5000);
-  });
+    tvBtn.addEventListener("click", () => {
+      tvOutput.classList.remove("hidden");
+      document.querySelector(".loading-dots").style.display = "flex";
+      document.querySelector(".coming-text").style.display = "block";
+      tvFrameContainer.classList.add("hidden");
+
+      setTimeout(() => {
+        document.querySelector(".loading-dots").style.display = "none";
+        document.querySelector(".coming-text").style.display = "none";
+        tvFrameContainer.classList.remove("hidden");
+        tvFrame.src = "https://www.kenyamoja.com";
+      }, 5000);
+    });
+
+    fullscreenBtn.addEventListener("click", () => {
+      if (tvFrame.requestFullscreen) tvFrame.requestFullscreen();
+    });
   </script>
-
-  <script src="script.js"></script>
 </body>
 </html>
