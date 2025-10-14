@@ -7,14 +7,12 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Matrix background -->
   <canvas id="matrix"></canvas>
 
-  <!-- Top header -->
   <header class="site-header">
     <div class="brand">
       <div class="logo">404<span>Tech</span></div>
-      <div class="subtitle">Innovative tools,VPN, Hacking services,mod apps, WhatsApp bots & AI Tools</div>
+      <div class="subtitle">Innovative tools, VPN, Hacking services, Mod apps, WhatsApp bots & AI Tools</div>
     </div>
 
     <nav class="top-actions">
@@ -26,7 +24,6 @@
     </nav>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero-left">
       <h1>Welcome to 404 Tech</h1>
@@ -38,7 +35,6 @@
     </div>
   </section>
 
-  <!-- AI Bots -->
   <section id="ai" class="section">
     <h2>🪄 WhatsApp AI Chatbots</h2>
     <div class="grid bots-grid">
@@ -57,7 +53,6 @@
     </div>
   </section>
 
-  <!-- 😁Groups😁 -->
   <section id="groups" class="section">
     <h2>👥 Join our WhatsApp Groups</h2>
     <div class="groups-row">
@@ -66,7 +61,6 @@
     </div>
   </section>
 
-  <!-- ❗Tools❗ -->
   <section id="tools" class="section">
     <h2>🛠️ Tools</h2>
     <div class="tools-row">
@@ -76,7 +70,6 @@
     </div>
   </section>
 
-  <!-- MOD Apps -->
   <section id="mods" class="section">
     <h2>⚡ MOD Apps</h2>
     <div class="mods-list">
@@ -102,15 +95,10 @@
     <div id="tvOutput" class="tv-output hidden">
       <div class="loading-dots">● ● ●</div>
       <p class="coming-text">Coming Soon...</p>
-      <div class="gallery-grid small">
-        <img src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/124.jpg" alt="">
-        <img src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/1758819254648.jpg" alt="">
-        <img src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/6462.jpg" alt="">
-      </div>
+      <div id="tvFrameContainer" class="hidden"></div>
     </div>
   </section>
 
-  <!-- Audio -->
   <audio id="bgAudio" loop>
     <source src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/Changawa%20ft%20%20Wakadinali%20%20-%20Syndicate%20lyrics%20-%20Gengeton.mp3" type="audio/mpeg">
   </audio>
@@ -118,6 +106,22 @@
   <footer class="site-footer">
     <div>© 2025 404 Tech — Owned by Nuch && OWEN THE GUY</div>
   </footer>
+
+  <script>
+  const tvBtn = document.getElementById("tvBtn");
+  const tvOutput = document.getElementById("tvOutput");
+  const tvFrameContainer = document.getElementById("tvFrameContainer");
+
+  tvBtn.addEventListener("click", () => {
+    tvOutput.classList.remove("hidden");
+    setTimeout(() => {
+      document.querySelector(".loading-dots").style.display = "none";
+      document.querySelector(".coming-text").style.display = "none";
+      tvFrameContainer.classList.remove("hidden");
+      tvFrameContainer.innerHTML = `<iframe src="https://www.kenyamoja.com" width="100%" height="600" style="border:none;border-radius:10px;"></iframe>`;
+    }, 5000);
+  });
+  </script>
 
   <script src="script.js"></script>
 </body>
