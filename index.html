@@ -1,194 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>404 Tech — Digital Freedom Hub</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* === TV 404 Styling === */
-    .tv-output.hidden { display: none; }
-    .tv-output {
-      text-align: center;
-      margin-top: 20px;
-      color: #0ff;
-    }
-    .loading-dots {
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-      font-size: 2rem;
-      animation: blink 1s infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
-    }
-    .tv-frame-box {
-      margin-top: 15px;
-      background: rgba(0,0,0,0.7);
-      border-radius: 15px;
-      box-shadow: 0 0 25px #0ff;
-      padding: 10px;
-    }
-    .tv-frame-box iframe {
-      width: 100%;
-      height: 600px;
-      border-radius: 12px;
-      border: none;
-    }
-    .tv-header {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 8px;
-    }
-    .cta.small {
-      font-size: 0.9rem;
-      padding: 4px 10px;
-    }
-  </style>
 </head>
-
 <body>
-  <!-- Matrix background -->
+  <!-- Canvas layers -->
   <canvas id="matrix"></canvas>
+  <canvas id="neonOrbs"></canvas>
 
   <!-- Top header -->
   <header class="site-header">
     <div class="brand">
       <div class="logo">404<span>Tech</span></div>
-      <div class="subtitle">Innovative tools, VPN, Hacking services, Mod Apps, WhatsApp bots & AI Tools</div>
+      <div class="subtitle">Innovative tools, VPN, Mod apps, WhatsApp bots & AI Tools</div>
     </div>
 
-    <nav class="top-actions">
-      <button id="musicToggle" class="icon-btn">🔊</button>
+    <nav class="top-actions" aria-label="Main navigation">
+      <button id="musicToggle" class="icon-btn" title="Toggle background music">🔊</button>
       <a class="menu-btn" href="#ai">AI</a>
       <a class="menu-btn" href="#groups">Groups</a>
       <a class="menu-btn" href="#tools">Tools</a>
       <a class="menu-btn" href="#tv404">TV 404</a>
+      <a class="menu-btn" href="#gallery">Gallery</a>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="hero-left">
-      <h1>Welcome to 404 Tech</h1>
-      <p>Dark-tech tools, WhatsApp AI bots & community groups — all in one place.</p>
-      <div class="cta-row">
-        <a class="cta" href="https://wa.me/+254769769295" target="_blank">💬 Contact Nuch</a>
-        <a class="cta ghost" href="#ai">🤖 Explore AI Tools</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI Bots -->
-  <section id="ai" class="section">
-    <h2>🪄 WhatsApp AI Chatbots</h2>
-    <div class="grid bots-grid">
-      <a class="bot" href="https://wa.me/18772241042" target="_blank">Microsoft Copilot</a>
-      <a class="bot" href="https://wa.me/18002428478" target="_blank">ChatGPT</a>
-      <a class="bot" href="https://wa.me/12014166644" target="_blank">Shmooz AI</a>
-      <a class="bot" href="https://wa.me/447457403599" target="_blank">Jinni</a>
-      <a class="bot" href="https://wa.me/447457403599" target="_blank">Wiz AI</a>
-      <a class="bot" href="https://wa.me/447457403599" target="_blank">GuidGeek</a>
-      <a class="bot" href="https://wa.me/27767346284" target="_blank">MobileGPT</a>
-      <a class="bot" href="https://wa.me/34613288116" target="_blank">LuzAI</a>
-      <a class="bot" href="https://wa.me/16204458887" target="_blank">Truora AI</a>
-      <a class="bot" href="https://wa.me/918738030604" target="_blank">August AI</a>
-      <a class="bot" href="https://wa.me/18442439728" target="_blank">HeyPat AI</a>
-      <a class="bot" href="https://wa.me/16502234435" target="_blank">Dola AI</a>
-    </div>
-  </section>
-
-  <!-- Groups -->
-  <section id="groups" class="section">
-    <h2>👥 Join our WhatsApp Groups</h2>
-    <div class="groups-row">
-      <a class="group-btn neon green" href="https://chat.whatsapp.com/ISoJgaNSpfPI4oxuS4flUk?mode=wwc" target="_blank">Join Group 1</a>
-      <a class="group-btn neon blue" href="https://chat.whatsapp.com/CXvuzqNACLSAEs6OwzqGTd?mode=wwc" target="_blank">Join Group 2</a>
-    </div>
-  </section>
-
-  <!-- Tools -->
-  <section id="tools" class="section">
-    <h2>🛠️ Tools</h2>
-    <div class="tools-row">
-      <a class="tool-card neon purple" href="https://t.me/Instagram_vidio_downlod_bot" target="_blank">Instagram Video Downloader</a>
-      <a class="tool-card neon cyan" href="https://t.me/Zenon_mediabot" target="_blank">TikTok Downloader (No watermark)</a>
-      <a class="tool-card neon green" href="https://zefoy.com/" target="_blank">TikTok Free Services (Zefoy)</a>
-    </div>
-  </section>
-
-  <!-- MOD Apps -->
-  <section id="mods" class="section">
-    <h2>⚡ MOD Apps</h2>
-    <div class="mods-list">
-      <a href="https://www.mediafire.com/file/1nhthm5kt7wg0es/Remini_3.7.1020.202514479.apk/file">Remini Mod</a> |
-      <a href="https://drive.google.com/drive/u/0/mobile/folders/1pFgRX0pmSTyUoqmOsoo_-Gw-3HRUOAqC">Capcut Pro</a> |
-      <a href="https://www.mediafire.com/file/bjgg3kx4s06y3m5/PICSART_PRO_BY_DARK_LEGEND.apk/file">PicsArt Pro</a> |
-      <a href="https://www.mediafire.com/file/9bdrtv6g6mtmjoz/ChatGPT+Premium_1.0.11.apk/file">ChatGPT Premium</a> |
-      <a href="https://www.mediafire.com/file/7yl30aq4hs6imve/𝙈𝙍𝙄𝙎𝘽𝙍𝘼𝙉𝘿𝙒𝙃𝘼𝙏𝙎𝘼𝙋𝙋_2.25.15.80.apk/file">WhatsApp Premium</a> |
-      <a href="https://www.mediafire.com/file/ep8skhavdtp9c7m/Youtube_5.3.80.132.apk/file">YouTube Premium</a> |
-      <a href="https://www.mediafire.com/file/zt6abyx9g9n1n0x/Netflix_v9.10.1_%2528Premium%2529_by_Abuzar.apk/file">Netflix Premium</a> |
-      <a href="https://www.mediafire.com/file/m4jyh9lk4fbgndu/Wink_2.13.0.apk/file">Wink Premium</a> |
-      <a href="https://www.mediafire.com/file/jiyv52a343qmbtj/InShot_2.152.1504.apk/file">InShot Premium</a> |
-      <a href="https://www.mediafire.com/file/7v8ayo7qcito16u/CRICFy+TV_5.0.apk/file">Cricfy TV</a> |
-      <a href="https://www.mediafire.com/file/4x3h0l3zsm4zfwf/TIKTOK_LIVE_APK_BY_DARK_LEGEND_333.apk/file">TikTok Live APK</a> |
-      <a href="https://www.mediafire.com/file/aigmux8s9bepzxf/TELEGRAM_MODDED.apk/file">Telegram Premium</a>
-    </div>
-  </section>
-
-  <!-- TV 404 -->
-  <section id="tv404" class="section">
-    <h2>📺 TV 404</h2>
-    <button id="tvBtn" class="cta neon">Open TV 404</button>
-
-    <div id="tvOutput" class="tv-output hidden">
-      <div class="loading-dots"><span>●</span><span>●</span><span>●</span></div>
-      <p class="coming-text">Loading 404 TV...</p>
-      <div id="tvFrameContainer" class="hidden tv-frame-box">
-        <div class="tv-header">
-          <button id="fullscreenBtn" class="cta small">📺 Fullscreen</button>
+  <main class="content">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Welcome to 404 Tech</h1>
+        <p class="lead">Dark-tech tools, WhatsApp AI bots & community groups — all in one place.</p>
+        <div class="cta-row">
+          <a class="cta" href="https://wa.me/+254769769295" target="_blank" rel="noopener">💬 Contact Nuch</a>
+          <a class="cta ghost" href="#ai">🤖 Explore AI Tools</a>
         </div>
-        <iframe id="tvFrame" src="" allowfullscreen></iframe>
       </div>
-    </div>
-  </section>
+      <div class="hero-right">
+        <div class="stat-card neon">
+          <div class="stat">Owned by Nuch</div>
+          <div class="sub">Global • 2025</div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Audio -->
-  <audio id="bgAudio" loop>
-    <source src="https://raw.githubusercontent.com/Emmanuel113-prog/404TechWebsite/main/Changawa%20ft%20%20Wakadinali%20%20-%20Syndicate%20lyrics%20-%20Gengeton.mp3" type="audio/mpeg">
-  </audio>
+    <!-- AI Bots -->
+    <section id="ai" class="section">
+      <h2>🪄 WhatsApp AI Chatbots</h2>
+      <p class="muted">Tap to open in WhatsApp</p>
+      <div class="grid bots-grid">
+        <a class="bot" href="https://wa.me/18772241042" target="_blank" rel="noopener">Microsoft Copilot</a>
+        <a class="bot" href="https://wa.me/18002428478" target="_blank" rel="noopener">ChatGPT</a>
+        <a class="bot" href="https://wa.me/12014166644" target="_blank" rel="noopener">Shmooz AI</a>
+        <a class="bot" href="https://wa.me/447457403599" target="_blank" rel="noopener">Jinni</a>
+        <a class="bot" href="https://wa.me/447457403599" target="_blank" rel="noopener">Wiz AI</a>
+        <a class="bot" href="https://wa.me/447457403599" target="_blank" rel="noopener">GuidGeek</a>
+        <a class="bot" href="https://wa.me/27767346284" target="_blank" rel="noopener">MobileGPT</a>
+        <a class="bot" href="https://wa.me/34613288116" target="_blank" rel="noopener">LuzAI</a>
+        <a class="bot" href="https://wa.me/16204458887" target="_blank" rel="noopener">Truora AI</a>
+        <a class="bot" href="https://wa.me/918738030604" target="_blank" rel="noopener">August AI</a>
+        <a class="bot" href="https://wa.me/18442439728" target="_blank" rel="noopener">HeyPat AI</a>
+        <a class="bot" href="https://wa.me/16502234435" target="_blank" rel="noopener">Dola AI</a>
+      </div>
+    </section>
+
+    <!-- Groups -->
+    <section id="groups" class="section">
+      <h2>👥 Join our WhatsApp Groups</h2>
+      <div class="groups-row">
+        <a class="group-btn neon green" href="https://chat.whatsapp.com/ISoJgaNSpfPI4oxuS4flUk?mode=wwc" target="_blank" rel="noopener">Join Group 1</a>
+        <a class="group-btn neon blue" href="https://chat.whatsapp.com/CXvuzqNACLSAEs6OwzqGTd?mode=wwc" target="_blank" rel="noopener">Join Group 2</a>
+      </div>
+      <div class="ai-whatsapp-list">
+        <h4>WhatsApp AI quick list</h4>
+        <ul>
+          <li>Microsoft Copilot: <a href="https://wa.me/18772241042" target="_blank" rel="noopener">wa.me/18772241042</a></li>
+          <li>ChatGPT: <a href="https://wa.me/18002428478" target="_blank" rel="noopener">wa.me/18002428478</a></li>
+          <li>Shmooz Ai: <a href="https://wa.me/12014166644" target="_blank" rel="noopener">wa.me/12014166644</a></li>
+          <li>...and more in the bots section</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section id="tools" class="section">
+      <h2>🛠️ Tools</h2>
+      <div class="tools-row">
+        <a class="tool-card neon purple" href="https://t.me/Instagram_vidio_downlod_bot" target="_blank" rel="noopener">Instagram Video Bot</a>
+        <a class="tool-card neon cyan" href="https://t.me/Zenon_mediabot" target="_blank" rel="noopener">TikTok Downloader (No watermark)</a>
+        <a class="tool-card neon green" href="https://zefoy.com/" target="_blank" rel="noopener">TikTok Free Services (Zefoy)</a>
+      </div>
+    </section>
+
+    <!-- MOD Apps -->
+    <section id="mods" class="section">
+      <h2>⚡ MOD Apps</h2>
+      <div class="mods-list">
+        <a href="https://www.mediafire.com/file/1nhthm5kt7wg0es/Remini_3.7.1020.202514479.apk/file" target="_blank" rel="noopener">Remini Mod</a> |
+        <a href="https://drive.google.com/drive/u/0/mobile/folders/1pFgRX0pmSTyUoqmOsoo_-Gw-3HRUOAqC" target="_blank" rel="noopener">CapCut Pro</a> |
+        <a href="https://www.mediafire.com/file/bjgg3kx4s06y3m5/PICSART_PRO_BY_DARK_LEGEND.apk/file" target="_blank" rel="noopener">PicsArt Pro</a>
+      </div>
+    </section>
+
+    <!-- TV 404 -->
+    <section id="tv404" class="section">
+      <h2>📺 TV 404</h2>
+      <button id="tvBtn" class="cta neon">Open TV 404</button>
+
+      <div id="tvOutput" class="tv-output hidden">
+        <div class="loading-dots"><span>●</span><span>●</span><span>●</span></div>
+        <p class="coming-text">Loading 404 TV...</p>
+
+        <div id="tvFrameContainer" class="hidden tv-frame-box">
+          <div class="tv-header">
+            <button id="fullscreenBtn" class="cta small">📺 Fullscreen</button>
+            <button id="closeTv" class="cta small ghost">✖</button>
+          </div>
+          <iframe id="tvFrame" src="" allowfullscreen sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section gallery-section">
+      <h2>📸 Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://raw.githubusercontent.com/Emmanuel113-prog/Flash-four/main/124.jpg" alt="Image 1"></div>
+        <div class="gallery-item"><img src="https://raw.githubusercontent.com/Emmanuel113-prog/Flash-four/main/1758819254648.jpg" alt="Image 2"></div>
+        <div class="gallery-item"><img src="https://raw.githubusercontent.com/Emmanuel113-prog/Flash-four/main/6462.jpg" alt="Image 3"></div>
+      </div>
+
+      <div class="tv-cta">
+        <button id="tv404open" class="cta ghost">TV 404 — Open Channel</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Audio (your uploaded file on GitHub) -->
+  <div id="audioHolder" aria-hidden="true">
+    <audio id="bgAudio" loop preload="auto">
+      <source src="https://raw.githubusercontent.com/Emmanuel113-prog/Flash-four/main/Changawa%20ft%20%20Wakadinali%20%20-%20Syndicate%20lyrics%20-%20Gengeton.mp3" type="audio/mpeg">
+      Your browser does not support audio.
+    </audio>
+  </div>
 
   <footer class="site-footer">
     <div>© 2025 404 Tech — Owned by Nuch & Owen</div>
+    <div class="footer-links">
+      <a href="https://wa.me/254769769295" target="_blank" rel="noopener">WhatsApp</a> •
+      <a href="https://t.me/Instagram_vidio_downlod_bot" target="_blank" rel="noopener">IG Bot</a>
+    </div>
   </footer>
 
-  <script>
-    // === TV 404 Logic ===
-    const tvBtn = document.getElementById("tvBtn");
-    const tvOutput = document.getElementById("tvOutput");
-    const tvFrameContainer = document.getElementById("tvFrameContainer");
-    const tvFrame = document.getElementById("tvFrame");
-    const fullscreenBtn = document.getElementById("fullscreenBtn");
-
-    tvBtn.addEventListener("click", () => {
-      tvOutput.classList.remove("hidden");
-      document.querySelector(".loading-dots").style.display = "flex";
-      document.querySelector(".coming-text").style.display = "block";
-      tvFrameContainer.classList.add("hidden");
-
-      setTimeout(() => {
-        document.querySelector(".loading-dots").style.display = "none";
-        document.querySelector(".coming-text").style.display = "none";
-        tvFrameContainer.classList.remove("hidden");
-        tvFrame.src = "https://kenyalivetv.co.ke";
-      }, 5000);
-    });
-
-    fullscreenBtn.addEventListener("click", () => {
-      if (tvFrame.requestFullscreen) tvFrame.requestFullscreen();
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
