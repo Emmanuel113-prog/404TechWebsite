@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>404 Tech — Digital Freedom Hub</title>
+  <title>404 Tech — Advanced Digital Operations</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    /* === HACKER STYLING === */
+    /* === ADVANCED HACK LAB STYLING === */
     * {
       margin: 0;
       padding: 0;
@@ -23,7 +23,7 @@
       line-height: 1.6;
     }
 
-    /* Matrix background */
+    /* Advanced Matrix background */
     #matrix {
       position: fixed;
       top: 0;
@@ -34,69 +34,163 @@
       background: #000;
     }
 
-    /* Scan line effect */
+    /* Multiple scan lines */
     .scan-line {
       position: fixed;
-      top: 0;
       left: 0;
       width: 100%;
-      height: 2px;
+      height: 1px;
       background: rgba(0, 255, 0, 0.3);
       box-shadow: 0 0 10px #00ff00;
-      animation: scan 3s linear infinite;
+      animation: scan 2s linear infinite;
       z-index: 999;
       pointer-events: none;
     }
+
+    .scan-line:nth-child(1) { animation-delay: 0s; }
+    .scan-line:nth-child(2) { animation-delay: 0.5s; }
+    .scan-line:nth-child(3) { animation-delay: 1s; }
+    .scan-line:nth-child(4) { animation-delay: 1.5s; }
 
     @keyframes scan {
       0% { top: 0%; }
       100% { top: 100%; }
     }
 
-    /* Glitch effect */
-    @keyframes glitch {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(-2px, -2px); }
-      60% { transform: translate(2px, 2px); }
-      80% { transform: translate(2px, -2px); }
-      100% { transform: translate(0); }
+    /* Danger zone pulsing border */
+    @keyframes dangerPulse {
+      0%, 100% { box-shadow: 0 0 20px #ff0000; }
+      50% { box-shadow: 0 0 40px #ff0000, 0 0 60px #ff0000; }
     }
 
-    /* Header */
+    .danger-zone {
+      animation: dangerPulse 2s infinite;
+      border: 1px solid #ff0000 !important;
+    }
+
+    /* Radar sweep */
+    .radar {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      border: 2px solid #00ff00;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      opacity: 0.1;
+    }
+
+    .radar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 50%;
+      background: #00ff00;
+      transform-origin: bottom;
+      animation: radarSweep 4s linear infinite;
+    }
+
+    @keyframes radarSweep {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Data stream effect */
+    .data-stream {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.1));
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .data-bit {
+      position: absolute;
+      color: #00ff00;
+      font-size: 12px;
+      animation: dataFlow 3s linear infinite;
+    }
+
+    @keyframes dataFlow {
+      0% { transform: translateY(-100px); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    /* Terminal cursor blink */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .cursor::after {
+      content: '_';
+      animation: blink 1s infinite;
+    }
+
+    /* Header with security status */
     .site-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      background: rgba(0, 20, 0, 0.8);
+      padding: 15px 20px;
+      background: rgba(0, 10, 0, 0.95);
       border-bottom: 1px solid #00ff00;
-      box-shadow: 0 0 20px #00ff00;
+      box-shadow: 0 0 30px #00ff00;
       position: relative;
+      z-index: 100;
+    }
+
+    .security-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+    }
+
+    .status-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #00ff00;
+      animation: statusPulse 2s infinite;
+    }
+
+    @keyframes statusPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
 
     .logo {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: bold;
       color: #00ff00;
-      text-shadow: 0 0 10px #00ff00;
+      text-shadow: 0 0 15px #00ff00;
       font-family: 'Orbitron', sans-serif;
     }
 
     .logo span {
       color: #ff0000;
-      text-shadow: 0 0 10px #ff0000;
+      text-shadow: 0 0 15px #ff0000;
     }
 
     .subtitle {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: #00cc00;
       margin-top: 5px;
     }
 
     .top-actions {
       display: flex;
-      gap: 15px;
+      gap: 10px;
       align-items: center;
     }
 
@@ -104,8 +198,8 @@
       color: #00ff00;
       background: transparent;
       border: 1px solid #00ff00;
-      padding: 10px 20px;
-      font-size: 1rem;
+      padding: 8px 15px;
+      font-size: 0.9rem;
       cursor: pointer;
       transition: all 0.3s ease;
       text-decoration: none;
@@ -135,10 +229,82 @@
       box-shadow: 0 0 15px #00ff00;
     }
 
+    /* Main container with grid layout */
+    .main-container {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Left panel - Main content */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Right panel - System monitor */
+    .system-monitor {
+      background: rgba(0, 20, 0, 0.8);
+      border: 1px solid #00ff00;
+      padding: 15px;
+      box-shadow: 0 0 20px #00ff00;
+    }
+
+    .monitor-title {
+      color: #00ff00;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      text-align: center;
+      border-bottom: 1px solid #00ff00;
+      padding-bottom: 5px;
+    }
+
+    .system-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    .stat-value {
+      color: #00cc00;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #002200;
+      margin-top: 5px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: #00ff00;
+      animation: progressPulse 2s infinite;
+    }
+
+    @keyframes progressPulse {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
+    }
+
     /* Hero Section */
     .hero {
+      background: rgba(0, 20, 0, 0.8);
+      border: 1px solid #00ff00;
+      padding: 30px;
       text-align: center;
-      padding: 80px 20px 60px;
+      box-shadow: 0 0 25px #00ff00;
       position: relative;
     }
 
@@ -153,27 +319,22 @@
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       color: #00ff00;
       text-shadow: 0 0 20px #00ff00;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-family: 'Orbitron', sans-serif;
-      animation: glitch 5s infinite;
     }
 
     .hero p {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       color: #00cc00;
-      margin-bottom: 30px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 25px;
     }
 
     .cta-row {
-      margin-top: 30px;
       display: flex;
-      gap: 20px;
+      gap: 15px;
       justify-content: center;
       flex-wrap: wrap;
     }
@@ -181,45 +342,27 @@
     .cta {
       background: #00ff00;
       color: #000;
-      padding: 15px 30px;
-      border-radius: 0;
+      padding: 12px 25px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1rem;
-      box-shadow: 0 0 20px #00ff00;
+      font-size: 1rem;
+      box-shadow: 0 0 15px #00ff00;
       transition: all 0.3s ease;
       border: none;
       cursor: pointer;
       font-family: 'Share Tech Mono', monospace;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-      transition: left 0.5s;
-    }
-
-    .cta:hover::before {
-      left: 100%;
     }
 
     .cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 30px #00ff00;
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px #00ff00;
     }
 
     .cta.ghost {
       background: transparent;
       color: #00ff00;
       border: 1px solid #00ff00;
-      box-shadow: 0 0 15px #00ff00;
+      box-shadow: 0 0 10px #00ff00;
     }
 
     .cta.ghost:hover {
@@ -229,140 +372,42 @@
 
     /* Sections */
     .section {
-      padding: 60px 20px;
-      text-align: center;
-      position: relative;
-    }
-
-    .section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 10%;
-      right: 10%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #00ff00, #ff0000, #00ff00, transparent);
+      background: rgba(0, 20, 0, 0.8);
+      border: 1px solid #00ff00;
+      padding: 25px;
+      box-shadow: 0 0 20px #00ff00;
     }
 
     .section h2 {
       color: #00ff00;
-      margin-bottom: 40px;
-      text-shadow: 0 0 15px #00ff00;
-      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
       font-family: 'Orbitron', sans-serif;
-      animation: glitch 4s infinite;
+      border-bottom: 1px solid #00ff00;
+      padding-bottom: 10px;
     }
 
-    /* Grids */
+    /* Grid layouts */
     .grid {
       display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      justify-content: center;
-      max-width: 1200px;
-      margin: 0 auto;
+      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
     .bot, .tool-card, .group-btn {
-      display: inline-block;
-      padding: 20px;
-      color: #000;
+      background: #001100;
+      color: #00ff00;
+      padding: 15px;
       text-decoration: none;
-      border-radius: 0;
-      font-weight: bold;
-      font-size: 1.1rem;
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      border: none;
-      cursor: pointer;
+      border: 1px solid #00ff00;
       text-align: center;
       font-family: 'Share Tech Mono', monospace;
-      box-shadow: 0 0 15px currentColor;
+      position: relative;
+      overflow: hidden;
     }
 
     .bot::before, .tool-card::before, .group-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: left 0.5s;
-    }
-
-    .bot:hover::before, .tool-card:hover::before, .group-btn:hover::before {
-      left: 100%;
-    }
-
-    .bot:hover, .tool-card:hover, .group-btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 25px currentColor;
-    }
-
-    /* Colors */
-    .bot { 
-      box-shadow: 0 0 15px #00ff00; 
-      background: #00ff00;
-    }
-
-    .neon.blue { 
-      box-shadow: 0 0 15px #0088ff; 
-      background: #0088ff; 
-    }
-    .neon.green { 
-      box-shadow: 0 0 15px #00ff00; 
-      background: #00ff00; 
-    }
-    .neon.purple { 
-      box-shadow: 0 0 15px #aa00ff; 
-      background: #aa00ff; 
-    }
-    .neon.cyan { 
-      box-shadow: 0 0 15px #00ffff; 
-      background: #00ffff; 
-    }
-
-    /* Groups & Tools Layout */
-    .groups-row, .tools-row {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .group-btn, .tool-card {
-      min-width: 200px;
-      flex: 1;
-    }
-
-    /* MODs list */
-    .mods-list {
-      background: rgba(0, 20, 0, 0.6);
-      padding: 30px;
-      border-radius: 0;
-      border: 1px solid #00ff00;
-      box-shadow: 0 0 20px #00ff00;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .mods-list a {
-      display: inline-block;
-      color: #00ff00;
-      margin: 10px 15px;
-      text-decoration: none;
-      padding: 8px 16px;
-      border: 1px solid transparent;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .mods-list a::before {
       content: '';
       position: absolute;
       top: 0;
@@ -373,47 +418,111 @@
       transition: left 0.5s;
     }
 
-    .mods-list a:hover::before {
+    .bot:hover::before, .tool-card:hover::before, .group-btn:hover::before {
       left: 100%;
     }
 
+    .bot:hover, .tool-card:hover, .group-btn:hover {
+      background: #00ff00;
+      color: #000;
+      box-shadow: 0 0 15px #00ff00;
+      transform: translateY(-2px);
+    }
+
+    /* Color variations */
+    .neon.blue { border-color: #0088ff; color: #0088ff; }
+    .neon.blue:hover { background: #0088ff; color: #000; }
+    .neon.green { border-color: #00ff00; color: #00ff00; }
+    .neon.green:hover { background: #00ff00; color: #000; }
+    .neon.purple { border-color: #aa00ff; color: #aa00ff; }
+    .neon.purple:hover { background: #aa00ff; color: #000; }
+    .neon.cyan { border-color: #00ffff; color: #00ffff; }
+    .neon.cyan:hover { background: #00ffff; color: #000; }
+
+    /* MODs list */
+    .mods-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .mods-list a {
+      display: block;
+      color: #00ff00;
+      text-decoration: none;
+      padding: 10px;
+      border: 1px solid #00ff00;
+      transition: all 0.3s ease;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
     .mods-list a:hover {
-      color: #ff0000;
-      border-color: #ff0000;
-      box-shadow: 0 0 10px #ff0000;
+      background: #00ff00;
+      color: #000;
+      box-shadow: 0 0 10px #00ff00;
     }
 
     /* TV 404 Section */
-    #tvBtn {
-      padding: 15px 30px;
-      border: none;
-      background: #00ff00;
-      color: #000;
-      border-radius: 0;
-      font-weight: bold;
-      font-size: 1.2rem;
-      cursor: pointer;
+    .tv-frame-box {
+      margin-top: 15px;
+      background: rgba(0, 10, 0, 0.9);
+      border: 1px solid #00ff00;
+      padding: 10px;
       box-shadow: 0 0 20px #00ff00;
-      transition: all 0.3s ease;
-      font-family: 'Share Tech Mono', monospace;
     }
 
-    #tvBtn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 30px #00ff00;
+    .tv-frame-box iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
     }
 
-    /* TV Output */
-    .tv-output {
+    .tv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .cta.small {
+      font-size: 0.8rem;
+      padding: 8px 15px;
+      background: #0088ff;
+    }
+
+    /* Footer */
+    .site-footer {
       margin-top: 30px;
-      animation: fadeIn 0.5s ease;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #00cc00;
+      border-top: 1px solid #00ff00;
+      background: rgba(0, 20, 0, 0.8);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Music Player */
+    .music-player {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0, 20, 0, 0.9);
+      padding: 10px 15px;
+      border: 1px solid #00ff00;
+      box-shadow: 0 0 15px #00ff00;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000;
     }
 
+    .music-info {
+      font-size: 0.8rem;
+      color: #00ff00;
+    }
+
+    /* Hidden elements */
     .hidden {
       display: none !important;
     }
@@ -421,11 +530,10 @@
     .loading-dots {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      font-size: 2.5rem;
+      gap: 8px;
+      font-size: 2rem;
       color: #00ff00;
-      text-shadow: 0 0 15px #00ff00;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .loading-dots span {
@@ -440,89 +548,17 @@
       50% { opacity: 1; transform: scale(1.2); }
     }
 
-    .coming-text {
-      font-size: 1.5rem;
-      color: #00ff00;
-      text-shadow: 0 0 15px #00ff00;
-      animation: glitch 2s infinite;
-    }
-
-    .tv-frame-box {
-      margin-top: 15px;
-      background: rgba(0, 10, 0, 0.8);
-      border-radius: 0;
-      box-shadow: 0 0 25px #00ff00;
-      padding: 10px;
-      border: 1px solid #00ff00;
-    }
-
-    .tv-frame-box iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-    }
-
-    .tv-header {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 8px;
-    }
-
-    .cta.small {
-      font-size: 0.9rem;
-      padding: 8px 16px;
-      background: #0088ff;
-      box-shadow: 0 0 10px #0088ff;
-    }
-
-    /* Footer */
-    .site-footer {
-      margin-top: 60px;
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 1rem;
-      color: #00cc00;
-      border-top: 1px solid #00ff00;
-      background: rgba(0, 20, 0, 0.8);
-    }
-
-    /* Music Player */
-    .music-player {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: rgba(0, 20, 0, 0.9);
-      padding: 10px 20px;
-      border: 1px solid #00ff00;
-      box-shadow: 0 0 15px #00ff00;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      z-index: 1000;
-    }
-
-    .music-info {
-      font-size: 0.8rem;
-      color: #00ff00;
-    }
-
-    /* Terminal effect */
-    .terminal {
-      border: 1px solid #00ff00;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 800px;
-      background: #000;
-      box-shadow: 0 0 20px #00ff00;
-    }
-
-    .terminal::before {
-      content: 'root@404tech:~$';
-      color: #00ff00;
-      margin-right: 10px;
-    }
-
     /* Responsive Design */
+    @media (max-width: 1024px) {
+      .main-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .system-monitor {
+        order: -1;
+      }
+    }
+
     @media (max-width: 768px) {
       .site-header {
         flex-direction: column;
@@ -531,11 +567,7 @@
       }
       
       .hero h1 {
-        font-size: 2.5rem;
-      }
-      
-      .hero p {
-        font-size: 1.1rem;
+        font-size: 2rem;
       }
       
       .cta-row {
@@ -543,17 +575,8 @@
         align-items: center;
       }
       
-      .section h2 {
-        font-size: 2rem;
-      }
-      
       .grid {
         grid-template-columns: 1fr;
-      }
-      
-      .mods-list a {
-        display: block;
-        margin: 10px 0;
       }
       
       .music-player {
@@ -566,117 +589,171 @@
 </head>
 
 <body>
-  <!-- Matrix background -->
+  <!-- Advanced Matrix background -->
   <canvas id="matrix"></canvas>
   
-  <!-- Scan line -->
+  <!-- Multiple scan lines -->
   <div class="scan-line"></div>
+  <div class="scan-line"></div>
+  <div class="scan-line"></div>
+  <div class="scan-line"></div>
+  
+  <!-- Radar sweep -->
+  <div class="radar"></div>
+  
+  <!-- Data stream -->
+  <div class="data-stream" id="dataStream"></div>
 
   <!-- Top header -->
   <header class="site-header">
     <div class="brand">
       <div class="logo">404<span>Tech</span></div>
-      <div class="subtitle">Innovative tools, VPN, Hacking services, Mod Apps, WhatsApp bots & AI Tools</div>
+      <div class="subtitle">ADVANCED DIGITAL OPERATIONS CENTER</div>
+    </div>
+
+    <div class="security-status">
+      <div class="status-indicator"></div>
+      <span>SYSTEM: SECURE</span>
     </div>
 
     <nav class="top-actions">
-      <button id="musicToggle" class="icon-btn">[SOUND]</button>
-      <a class="menu-btn" href="#ai">[AI]</a>
-      <a class="menu-btn" href="#groups">[GROUPS]</a>
-      <a class="menu-btn" href="#tools">[TOOLS]</a>
-      <a class="menu-btn" href="#mods">[MODS]</a>
-      <a class="menu-btn" href="#tv404">[TV_404]</a>
+      <button id="musicToggle" class="icon-btn">AUDIO</button>
+      <a class="menu-btn" href="#ai">AI BOTS</a>
+      <a class="menu-btn" href="#tools">TOOLS</a>
+      <a class="menu-btn" href="#mods">MODS</a>
+      <a class="menu-btn" href="#tv404">TV 404</a>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>WELCOME TO 404 TECH</h1>
-    <p>Dark-tech tools, WhatsApp AI bots & community groups — ACCESS GRANTED</p>
-    <div class="cta-row">
-      <a class="cta" href="https://wa.me/+254769769295" target="_blank">CONTACT NUCH</a>
-      <a class="cta ghost" href="#ai">EXPLORE AI TOOLS</a>
-    </div>
-  </section>
-
-  <!-- AI Bots -->
-  <section id="ai" class="section">
-    <h2>WHATSAPP AI CHATBOTS</h2>
-    <div class="grid bots-grid">
-      <a class="bot" href="https://wa.me/18772241042" target="_blank">Microsoft Copilot</a>
-      <a class="bot" href="https://wa.me/18002428478" target="_blank">ChatGPT</a>
-      <a class="bot" href="https://wa.me/12014166644" target="_blank">Shmooz AI</a>
-      <a class="bot" href="https://wa.me/447457403599" target="_blank">Jinni</a>
-      <a class="bot" href="https://wa.me/447457403599" target="_blank">Wiz AI</a>
-      <a class="bot" href="https://wa.me/447457403599" target="_blank">GuidGeek</a>
-      <a class="bot" href="https://wa.me/27767346284" target="_blank">MobileGPT</a>
-      <a class="bot" href="https://wa.me/34613288116" target="_blank">LuzAI</a>
-      <a class="bot" href="https://wa.me/16204458887" target="_blank">Truora AI</a>
-      <a class="bot" href="https://wa.me/918738030604" target="_blank">August AI</a>
-      <a class="bot" href="https://wa.me/18442439728" target="_blank">HeyPat AI</a>
-      <a class="bot" href="https://wa.me/16502234435" target="_blank">Dola AI</a>
-    </div>
-  </section>
-
-  <!-- Groups -->
-  <section id="groups" class="section">
-    <h2>JOIN OUR WHATSAPP GROUPS</h2>
-    <div class="groups-row">
-      <a class="group-btn neon green" href="https://chat.whatsapp.com/ISoJgaNSpfPI4oxuS4flUk?mode=wwc" target="_blank">JOIN GROUP 1</a>
-      <a class="group-btn neon blue" href="https://chat.whatsapp.com/CXvuzqNACLSAEs6OwzqGTd?mode=wwc" target="_blank">JOIN GROUP 2</a>
-    </div>
-  </section>
-
-  <!-- Tools -->
-  <section id="tools" class="section">
-    <h2>TOOLS</h2>
-    <div class="tools-row">
-      <a class="tool-card neon purple" href="https://t.me/Instagram_vidio_downlod_bot" target="_blank">Instagram Video Downloader</a>
-      <a class="tool-card neon cyan" href="https://t.me/Zenon_mediabot" target="_blank">TikTok Downloader (No watermark)</a>
-      <a class="tool-card neon green" href="https://zefoy.com/" target="_blank">TikTok Free Services (Zefoy)</a>
-    </div>
-  </section>
-
-  <!-- MOD Apps -->
-  <section id="mods" class="section">
-    <h2>MOD APPLICATIONS</h2>
-    <div class="mods-list">
-      <a href="https://www.mediafire.com/file/1nhthm5kt7wg0es/Remini_3.7.1020.202514479.apk/file">Remini Mod</a> |
-      <a href="https://drive.google.com/drive/u/0/mobile/folders/1pFgRX0pmSTyUoqmOsoo_-Gw-3HRUOAqC">Capcut Pro</a> |
-      <a href="https://www.mediafire.com/file/bjgg3kx4s06y3m5/PICSART_PRO_BY_DARK_LEGEND.apk/file">PicsArt Pro</a> |
-      <a href="https://www.mediafire.com/file/9bdrtv6g6mtmjoz/ChatGPT+Premium_1.0.11.apk/file">ChatGPT Premium</a> |
-      <a href="https://www.mediafire.com/file/7yl30aq4hs6imve/𝙈𝙍𝙄𝙎𝘽𝙍𝘼𝙉𝘿𝙒𝙃𝘼𝙏𝙎𝘼𝙋𝙋_2.25.15.80.apk/file">WhatsApp Premium</a> |
-      <a href="https://www.mediafire.com/file/ep8skhavdtp9c7m/Youtube_5.3.80.132.apk/file">YouTube Premium</a> |
-      <a href="https://www.mediafire.com/file/zt6abyx9g9n1n0x/Netflix_v9.10.1_%2528Premium%2529_by_Abuzar.apk/file">Netflix Premium</a> |
-      <a href="https://www.mediafire.com/file/m4jyh9lk4fbgndu/Wink_2.13.0.apk/file">Wink Premium</a> |
-      <a href="https://www.mediafire.com/file/jiyv52a343qmbtj/InShot_2.152.1504.apk/file">InShot Premium</a> |
-      <a href="https://www.mediafire.com/file/7v8ayo7qcito16u/CRICFy+TV_5.0.apk/file">Cricfy TV</a> |
-      <a href="https://www.mediafire.com/file/4x3h0l3zsm4zfwf/TIKTOK_LIVE_APK_BY_DARK_LEGEND_333.apk/file">TikTok Live APK</a> |
-      <a href="https://www.mediafire.com/file/aigmux8s9bepzxf/TELEGRAM_MODDED.apk/file">Telegram Premium</a>
-    </div>
-  </section>
-
-  <!-- TV 404 -->
-  <section id="tv404" class="section">
-    <h2>TV 404</h2>
-    <button id="tvBtn" class="cta">ACCESS TV 404</button>
-
-    <div id="tvOutput" class="tv-output hidden">
-      <div class="loading-dots"><span>●</span><span>●</span><span>●</span></div>
-      <p class="coming-text">INITIALIZING STREAM...</p>
-      <div id="tvFrameContainer" class="hidden tv-frame-box">
-        <div class="tv-header">
-          <button id="fullscreenBtn" class="cta small">FULLSCREEN</button>
+  <div class="main-container">
+    <!-- Left Panel - Main Content -->
+    <div class="main-content">
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>ACCESS GRANTED</h1>
+        <p>Welcome to 404 Tech Advanced Operations - Dark-tech tools, WhatsApp AI bots & elite community access</p>
+        <div class="cta-row">
+          <a class="cta" href="https://wa.me/+254769769295" target="_blank">CONTACT COMMAND</a>
+          <a class="cta ghost" href="#ai">DEPLOY AI ASSETS</a>
         </div>
-        <iframe id="tvFrame" src="" allowfullscreen></iframe>
+      </section>
+
+      <!-- AI Bots Section -->
+      <section id="ai" class="section">
+        <h2>AI CHATBOT NETWORK</h2>
+        <div class="grid">
+          <a class="bot" href="https://wa.me/18772241042" target="_blank">Microsoft Copilot</a>
+          <a class="bot" href="https://wa.me/18002428478" target="_blank">ChatGPT-4</a>
+          <a class="bot" href="https://wa.me/12014166644" target="_blank">Shmooz AI</a>
+          <a class="bot" href="https://wa.me/447457403599" target="_blank">Jinni AI</a>
+          <a class="bot" href="https://wa.me/447457403599" target="_blank">Wiz AI</a>
+          <a class="bot" href="https://wa.me/447457403599" target="_blank">GuidGeek</a>
+        </div>
+      </section>
+
+      <!-- Tools Section -->
+      <section id="tools" class="section">
+        <h2>OPERATIONAL TOOLS</h2>
+        <div class="grid">
+          <a class="tool-card neon purple" href="https://t.me/Instagram_vidio_downlod_bot" target="_blank">Instagram Downloader</a>
+          <a class="tool-card neon cyan" href="https://t.me/Zenon_mediabot" target="_blank">TikTok Downloader</a>
+          <a class="tool-card neon green" href="https://zefoy.com/" target="_blank">TikTok Services</a>
+          <a class="group-btn neon blue" href="https://chat.whatsapp.com/ISoJgaNSpfPI4oxuS4flUk?mode=wwc" target="_blank">Elite Group 1</a>
+          <a class="group-btn neon blue" href="https://chat.whatsapp.com/CXvuzqNACLSAEs6OwzqGTd?mode=wwc" target="_blank">Elite Group 2</a>
+        </div>
+      </section>
+
+      <!-- MOD Apps Section -->
+      <section id="mods" class="section">
+        <h2>ENHANCED APPLICATIONS</h2>
+        <div class="mods-list">
+          <a href="https://www.mediafire.com/file/1nhthm5kt7wg0es/Remini_3.7.1020.202514479.apk/file">Remini MOD</a>
+          <a href="https://drive.google.com/drive/u/0/mobile/folders/1pFgRX0pmSTyUoqmOsoo_-Gw-3HRUOAqC">Capcut Pro</a>
+          <a href="https://www.mediafire.com/file/bjgg3kx4s06y3m5/PICSART_PRO_BY_DARK_LEGEND.apk/file">PicsArt Pro</a>
+          <a href="https://www.mediafire.com/file/9bdrtv6g6mtmjoz/ChatGPT+Premium_1.0.11.apk/file">ChatGPT Premium</a>
+          <a href="https://www.mediafire.com/file/7yl30aq4hs6imve/𝙈𝙍𝙄𝙎𝘽𝙍𝘼𝙉𝘿𝙒𝙃𝘼𝙏𝙎𝘼𝙋𝙋_2.25.15.80.apk/file">WhatsApp Premium</a>
+          <a href="https://www.mediafire.com/file/ep8skhavdtp9c7m/Youtube_5.3.80.132.apk/file">YouTube Premium</a>
+        </div>
+      </section>
+
+      <!-- TV 404 Section -->
+      <section id="tv404" class="section danger-zone">
+        <h2>LIVE SURVEILLANCE FEED</h2>
+        <button id="tvBtn" class="cta">ACTIVATE STREAM</button>
+
+        <div id="tvOutput" class="tv-output hidden">
+          <div class="loading-dots"><span>●</span><span>●</span><span>●</span></div>
+          <p class="coming-text" style="text-align: center; color: #ff0000;">INITIALIZING SECURE STREAM...</p>
+          <div id="tvFrameContainer" class="hidden tv-frame-box">
+            <div class="tv-header">
+              <span>LIVE FEED: ACTIVE</span>
+              <button id="fullscreenBtn" class="cta small">FULLSCREEN</button>
+            </div>
+            <iframe id="tvFrame" src="" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Right Panel - System Monitor -->
+    <div class="system-monitor">
+      <div class="monitor-title">SYSTEM MONITOR</div>
+      <div class="system-stats">
+        <div class="stat">
+          <span>NETWORK SECURITY:</span>
+          <span class="stat-value">ACTIVE</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 95%"></div>
+        </div>
+
+        <div class="stat">
+          <span>AI BOTS ONLINE:</span>
+          <span class="stat-value">12/12</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 100%"></div>
+        </div>
+
+        <div class="stat">
+          <span>TOOLS OPERATIONAL:</span>
+          <span class="stat-value">100%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 100%"></div>
+        </div>
+
+        <div class="stat">
+          <span>USER CONNECTIONS:</span>
+          <span class="stat-value">1,247</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 78%"></div>
+        </div>
+
+        <div class="stat">
+          <span>SYSTEM UPTIME:</span>
+          <span class="stat-value">99.9%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 99%"></div>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px; padding: 10px; border: 1px solid #00ff00; font-size: 0.8rem;">
+        <div style="color: #00ff00; margin-bottom: 8px;">ACTIVE OPERATIONS:</div>
+        <div style="color: #00cc00;">• AI Network: STABLE</div>
+        <div style="color: #00cc00;">• Tools: OPERATIONAL</div>
+        <div style="color: #00cc00;">• MOD Repository: ONLINE</div>
+        <div style="color: #ff0000;">• Surveillance: STANDBY</div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- Music Player -->
   <div class="music-player">
-    <div class="music-info">SYSTEM AUDIO: ACTIVE</div>
-    <button id="musicToggleBottom" class="icon-btn">[PAUSE]</button>
+    <div class="music-info">AUDIO: OPERATIONAL</div>
+    <button id="musicToggleBottom" class="icon-btn">MUTE</button>
   </div>
 
   <!-- Audio -->
@@ -685,11 +762,11 @@
   </audio>
 
   <footer class="site-footer">
-    <div>© 2025 404 Tech — SYSTEM: ONLINE | OWNERS: NUCH & OWEN</div>
+    <div>© 2025 404 TECH ADVANCED OPERATIONS | SYSTEM SECURE | COMMAND: NUCH & OWEN</div>
   </footer>
 
   <script>
-    // Matrix background animation
+    // Enhanced Matrix background
     const canvas = document.getElementById("matrix");
     const ctx = canvas.getContext("2d");
 
@@ -700,8 +777,8 @@
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    const letters = "01010101010101010101010101010101010101010101010101";
-    const fontSize = 16;
+    const letters = "01010101010101010101010101010101010101010101010101ABCDEFGHIJKLMNOPQRSTUVWXYZ$#@!%^&*()";
+    const fontSize = 14;
     const columns = canvas.width / fontSize;
     const drops = Array(Math.floor(columns)).fill(1);
 
@@ -716,7 +793,14 @@
             const text = letters[Math.floor(Math.random() * letters.length)];
             const x = i * fontSize;
             
+            // Add slight glow effect
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = "#00ff00";
+            
             ctx.fillText(text, x, y * fontSize);
+            
+            // Reset shadow
+            ctx.shadowBlur = 0;
             
             if (y * fontSize > canvas.height && Math.random() > 0.975) {
                 drops[i] = 0;
@@ -726,6 +810,26 @@
     }
 
     setInterval(drawMatrix, 50);
+
+    // Data stream animation
+    function createDataStream() {
+      const stream = document.getElementById('dataStream');
+      const chars = '01010101010101010101010101';
+      
+      setInterval(() => {
+        const dataBit = document.createElement('div');
+        dataBit.className = 'data-bit';
+        dataBit.textContent = chars[Math.floor(Math.random() * chars.length)];
+        dataBit.style.left = Math.random() * 200 + 'px';
+        dataBit.style.animationDelay = Math.random() * 3 + 's';
+        stream.appendChild(dataBit);
+        
+        // Remove old elements
+        if (stream.children.length > 50) {
+          stream.removeChild(stream.firstChild);
+        }
+      }, 100);
+    }
 
     // Background music with auto-play
     const audio = document.getElementById("bgAudio");
@@ -744,12 +848,12 @@
       playing = !playing;
       if (playing) {
         audio.play();
-        toggle.textContent = "[SOUND]";
-        toggleBottom.textContent = "[PAUSE]";
+        toggle.textContent = "AUDIO";
+        toggleBottom.textContent = "MUTE";
       } else {
         audio.pause();
-        toggle.textContent = "[MUTE]";
-        toggleBottom.textContent = "[PLAY]";
+        toggle.textContent = "MUTED";
+        toggleBottom.textContent = "UNMUTE";
       }
     }
 
@@ -781,16 +885,26 @@
       if (tvFrame.requestFullscreen) tvFrame.requestFullscreen();
     });
 
-    // Terminal typing effect
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log(`%c
-╔══════════════════════════════════════╗
-║        404 TECH - SYSTEM ONLINE      ║
-║        UNAUTHORIZED ACCESS DENIED    ║
-║        OWNERS: NUCH & OWEN           ║
-╚══════════════════════════════════════╝
-      `, 'color: #00ff00; font-family: monospace;');
-    });
+    // Initialize
+    createDataStream();
+
+    // System monitor random updates
+    setInterval(() => {
+      const stats = document.querySelectorAll('.stat-value');
+      const userStat = stats[3];
+      const currentUsers = parseInt(userStat.textContent.replace(/,/g, ''));
+      userStat.textContent = (currentUsers + Math.floor(Math.random() * 3)).toLocaleString();
+    }, 5000);
+
+    // Console welcome
+    console.log(`%c
+╔══════════════════════════════════════════════╗
+║          404 TECH - ADVANCED OPERATIONS      ║
+║                 SYSTEM ONLINE                ║
+║           SECURITY PROTOCOLS: ACTIVE         ║
+║              COMMAND: NUCH & OWEN            ║
+╚══════════════════════════════════════════════╝
+    `, 'color: #00ff00; font-family: monospace; font-size: 12px;');
   </script>
 </body>
 </html>
