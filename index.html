@@ -125,17 +125,6 @@
       100% { transform: translateY(100vh); opacity: 0; }
     }
 
-    /* Terminal cursor blink */
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    .cursor::after {
-      content: '_';
-      animation: blink 1s infinite;
-    }
-
     /* Header with security status */
     .site-header {
       display: flex;
@@ -463,6 +452,54 @@
       box-shadow: 0 0 10px #00ff00;
     }
 
+    /* TikTok Services Section */
+    .tiktok-frame-box {
+      margin-top: 15px;
+      background: rgba(0, 10, 0, 0.9);
+      border: 1px solid #00ff00;
+      padding: 10px;
+      box-shadow: 0 0 20px #00ff00;
+      height: 600px;
+    }
+
+    .tiktok-frame-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .tiktok-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .service-btn {
+      background: #ff0055;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Share Tech Mono', monospace;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      margin: 5px;
+    }
+
+    .service-btn:hover {
+      background: #ff3377;
+      transform: translateY(-2px);
+    }
+
+    .service-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
     /* TV 404 Section */
     .tv-frame-box {
       margin-top: 15px;
@@ -584,6 +621,10 @@
         right: 10px;
         left: 10px;
       }
+      
+      .tiktok-frame-box {
+        height: 400px;
+      }
     }
   </style>
 </head>
@@ -619,6 +660,7 @@
     <nav class="top-actions">
       <button id="musicToggle" class="icon-btn">AUDIO</button>
       <a class="menu-btn" href="#ai">AI BOTS</a>
+      <a class="menu-btn" href="#tiktok">TIKTOK</a>
       <a class="menu-btn" href="#tools">TOOLS</a>
       <a class="menu-btn" href="#mods">MODS</a>
       <a class="menu-btn" href="#tv404">TV 404</a>
@@ -648,6 +690,32 @@
           <a class="bot" href="https://wa.me/447457403599" target="_blank">Jinni AI</a>
           <a class="bot" href="https://wa.me/447457403599" target="_blank">Wiz AI</a>
           <a class="bot" href="https://wa.me/447457403599" target="_blank">GuidGeek</a>
+          <a class="bot" href="https://wa.me/27767346284" target="_blank">MobileGPT</a>
+          <a class="bot" href="https://wa.me/34613288116" target="_blank">LuzAI</a>
+          <a class="bot" href="https://wa.me/16204458887" target="_blank">Truora AI</a>
+          <a class="bot" href="https://wa.me/918738030604" target="_blank">August AI</a>
+          <a class="bot" href="https://wa.me/18442439728" target="_blank">HeyPat AI</a>
+          <a class="bot" href="https://wa.me/16502234435" target="_blank">Dola AI</a>
+        </div>
+      </section>
+
+      <!-- TikTok Services Section -->
+      <section id="tiktok" class="section">
+        <h2>TIKTOK BOOST SERVICES</h2>
+        <div class="service-buttons">
+          <button class="service-btn" onclick="loadTikTokService('likes')">FREE LIKES</button>
+          <button class="service-btn" onclick="loadTikTokService('followers')">FREE FOLLOWERS</button>
+          <button class="service-btn" onclick="loadTikTokService('views')">FREE VIEWS</button>
+        </div>
+        
+        <div id="tiktokOutput" class="tiktok-output">
+          <div class="tiktok-frame-box">
+            <div class="tiktok-header">
+              <span>TIKTOK SERVICES: READY</span>
+              <button onclick="refreshTikTokService()" class="cta small">REFRESH</button>
+            </div>
+            <iframe id="tiktokFrame" src="https://nreer.com/" allowfullscreen></iframe>
+          </div>
         </div>
       </section>
 
@@ -673,6 +741,12 @@
           <a href="https://www.mediafire.com/file/9bdrtv6g6mtmjoz/ChatGPT+Premium_1.0.11.apk/file">ChatGPT Premium</a>
           <a href="https://www.mediafire.com/file/7yl30aq4hs6imve/𝙈𝙍𝙄𝙎𝘽𝙍𝘼𝙉𝘿𝙒𝙃𝘼𝙏𝙎𝘼𝙋𝙋_2.25.15.80.apk/file">WhatsApp Premium</a>
           <a href="https://www.mediafire.com/file/ep8skhavdtp9c7m/Youtube_5.3.80.132.apk/file">YouTube Premium</a>
+          <a href="https://www.mediafire.com/file/zt6abyx9g9n1n0x/Netflix_v9.10.1_%2528Premium%2529_by_Abuzar.apk/file">Netflix Premium</a>
+          <a href="https://www.mediafire.com/file/m4jyh9lk4fbgndu/Wink_2.13.0.apk/file">Wink Premium</a>
+          <a href="https://www.mediafire.com/file/jiyv52a343qmbtj/InShot_2.152.1504.apk/file">InShot Premium</a>
+          <a href="https://www.mediafire.com/file/7v8ayo7qcito16u/CRICFy+TV_5.0.apk/file">Cricfy TV</a>
+          <a href="https://www.mediafire.com/file/4x3h0l3zsm4zfwf/TIKTOK_LIVE_APK_BY_DARK_LEGEND_333.apk/file">TikTok Live APK</a>
+          <a href="https://www.mediafire.com/file/aigmux8s9bepzxf/TELEGRAM_MODDED.apk/file">Telegram Premium</a>
         </div>
       </section>
 
@@ -716,8 +790,8 @@
         </div>
 
         <div class="stat">
-          <span>TOOLS OPERATIONAL:</span>
-          <span class="stat-value">100%</span>
+          <span>TIKTOK SERVICES:</span>
+          <span class="stat-value">ONLINE</span>
         </div>
         <div class="progress-bar">
           <div class="progress" style="width: 100%"></div>
@@ -743,6 +817,7 @@
       <div style="margin-top: 20px; padding: 10px; border: 1px solid #00ff00; font-size: 0.8rem;">
         <div style="color: #00ff00; margin-bottom: 8px;">ACTIVE OPERATIONS:</div>
         <div style="color: #00cc00;">• AI Network: STABLE</div>
+        <div style="color: #00cc00;">• TikTok Services: ONLINE</div>
         <div style="color: #00cc00;">• Tools: OPERATIONAL</div>
         <div style="color: #00cc00;">• MOD Repository: ONLINE</div>
         <div style="color: #ff0000;">• Surveillance: STANDBY</div>
@@ -762,7 +837,7 @@
   </audio>
 
   <footer class="site-footer">
-    <div>© 2025 404 TECH ADVANCED OPERATIONS | SYSTEM SECURE | COMMAND: NUCH & OWEN</div>
+    <div>© 2025 404 TECH ADVANCED OPERATIONS | SYSTEM SECURE | OWNERSHIP: 404 TECH</div>
   </footer>
 
   <script>
@@ -885,6 +960,38 @@
       if (tvFrame.requestFullscreen) tvFrame.requestFullscreen();
     });
 
+    // TikTok Services Logic
+    const tiktokFrame = document.getElementById("tiktokFrame");
+    
+    function loadTikTokService(type) {
+      let url = "https://nreer.com/";
+      
+      // You can add different TikTok service URLs here based on the type
+      switch(type) {
+        case 'likes':
+          url = "https://nreer.com/";
+          break;
+        case 'followers':
+          url = "https://nreer.com/";
+          break;
+        case 'views':
+          url = "https://nreer.com/";
+          break;
+        default:
+          url = "https://nreer.com/";
+      }
+      
+      tiktokFrame.src = url;
+      
+      // Update system monitor
+      document.querySelectorAll('.stat-value')[2].textContent = "ACTIVE";
+      document.querySelector('.progress').style.width = "100%";
+    }
+    
+    function refreshTikTokService() {
+      tiktokFrame.src = tiktokFrame.src;
+    }
+
     // Initialize
     createDataStream();
 
@@ -902,7 +1009,7 @@
 ║          404 TECH - ADVANCED OPERATIONS      ║
 ║                 SYSTEM ONLINE                ║
 ║           SECURITY PROTOCOLS: ACTIVE         ║
-║              COMMAND: NUCH & OWEN            ║
+║              OWNERSHIP: 404 TECH             ║
 ╚══════════════════════════════════════════════╝
     `, 'color: #00ff00; font-family: monospace; font-size: 12px;');
   </script>
