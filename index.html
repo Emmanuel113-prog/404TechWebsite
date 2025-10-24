@@ -57,75 +57,39 @@
       100% { top: 100%; }
     }
 
-    /* TikTok Service Modal */
-    .tiktok-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 1000;
-      backdrop-filter: blur(5px);
+    /* Service Launch Animation */
+    @keyframes launchService {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
-    .tiktok-modal.active {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .launching {
+      animation: launchService 0.5s ease-in-out;
     }
 
-    .modal-content {
-      background: #001100;
-      border: 2px solid #00ff00;
-      box-shadow: 0 0 30px #00ff00;
-      width: 95%;
-      height: 90%;
-      position: relative;
+    /* Service Status */
+    .service-status {
+      background: rgba(0, 20, 0, 0.8);
+      border: 1px solid #00ff00;
+      padding: 15px;
+      margin-bottom: 20px;
+      text-align: center;
     }
 
-    .modal-header {
-      background: #002200;
-      padding: 15px 20px;
-      border-bottom: 1px solid #00ff00;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .modal-title {
+    .status-active {
       color: #00ff00;
-      font-size: 1.2rem;
       font-weight: bold;
     }
 
-    .close-modal {
-      background: #ff0000;
-      color: #000;
-      border: none;
-      padding: 8px 15px;
-      cursor: pointer;
-      font-family: 'Share Tech Mono', monospace;
-      font-weight: bold;
-    }
-
-    .modal-body {
-      height: calc(100% - 60px);
-      padding: 0;
-    }
-
-    .service-frame {
-      width: 100%;
-      height: 100%;
-      border: none;
-      background: white;
+    .status-ready {
+      color: #00cc00;
     }
 
     /* Service Buttons */
     .service-buttons {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 15px;
       margin-bottom: 20px;
     }
@@ -133,45 +97,77 @@
     .service-btn {
       background: #ff0055;
       color: #000;
-      padding: 15px 20px;
+      padding: 20px;
       border: none;
       cursor: pointer;
       font-family: 'Share Tech Mono', monospace;
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       transition: all 0.3s ease;
       text-align: center;
-      box-shadow: 0 0 15px #ff0055;
+      box-shadow: 0 0 20px #ff0055;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .service-btn:hover::before {
+      left: 100%;
     }
 
     .service-btn:hover {
-      background: #ff3377;
-      transform: translateY(-3px);
-      box-shadow: 0 0 25px #ff3377;
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px currentColor;
     }
 
-    .service-btn.likes { background: #ff0055; box-shadow: 0 0 15px #ff0055; }
-    .service-btn.followers { background: #00aaff; box-shadow: 0 0 15px #00aaff; }
-    .service-btn.views { background: #00ff88; box-shadow: 0 0 15px #00ff88; }
+    .service-btn.likes { 
+      background: #ff0055; 
+      box-shadow: 0 0 20px #ff0055;
+    }
+    .service-btn.followers { 
+      background: #00aaff; 
+      box-shadow: 0 0 20px #00aaff;
+    }
+    .service-btn.views { 
+      background: #00ff88; 
+      box-shadow: 0 0 20px #00ff88;
+    }
+    .service-btn.all { 
+      background: #aa00ff; 
+      box-shadow: 0 0 20px #aa00ff;
+    }
 
-    .service-btn.likes:hover { background: #ff3377; box-shadow: 0 0 25px #ff3377; }
-    .service-btn.followers:hover { background: #33bbff; box-shadow: 0 0 25px #33bbff; }
-    .service-btn.views:hover { background: #33ffaa; box-shadow: 0 0 25px #33ffaa; }
+    .service-btn.likes:hover { box-shadow: 0 0 30px #ff3377; }
+    .service-btn.followers:hover { box-shadow: 0 0 30px #33bbff; }
+    .service-btn.views:hover { box-shadow: 0 0 30px #33ffaa; }
+    .service-btn.all:hover { box-shadow: 0 0 30px #cc33ff; }
 
     /* Service Instructions */
     .service-instructions {
       background: rgba(0, 20, 0, 0.8);
       border: 1px solid #00ff00;
-      padding: 15px;
+      padding: 20px;
       margin-bottom: 20px;
       font-size: 0.9rem;
     }
 
     .service-instructions h3 {
       color: #00ff00;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       border-bottom: 1px solid #00ff00;
-      padding-bottom: 5px;
+      padding-bottom: 8px;
+      font-size: 1.1rem;
     }
 
     .service-instructions ol {
@@ -180,7 +176,42 @@
     }
 
     .service-instructions li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .service-instructions .highlight {
+      color: #ff0055;
+      font-weight: bold;
+    }
+
+    /* Alternative Services */
+    .alternative-services {
+      background: rgba(0, 20, 0, 0.6);
+      border: 1px dashed #00ff00;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    .alternative-services h4 {
+      color: #00ff00;
+      margin-bottom: 10px;
+    }
+
+    .alt-service-btn {
+      background: transparent;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+      padding: 10px 15px;
+      margin: 5px;
+      cursor: pointer;
+      font-family: 'Share Tech Mono', monospace;
+      transition: all 0.3s ease;
+    }
+
+    .alt-service-btn:hover {
+      background: #00ff00;
+      color: #000;
     }
 
     /* Main container with grid layout */
@@ -528,19 +559,6 @@
   <div class="scan-line"></div>
   <div class="scan-line"></div>
 
-  <!-- TikTok Service Modal -->
-  <div class="tiktok-modal" id="tiktokModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="modal-title">TIKTOK SERVICES - FREE LIKES/FOLLOWERS/VIEWS</div>
-        <button class="close-modal" onclick="closeTikTokModal()">CLOSE [X]</button>
-      </div>
-      <div class="modal-body">
-        <iframe class="service-frame" id="serviceFrame" src="" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
   <!-- Top header -->
   <header class="site-header">
     <div class="brand">
@@ -597,32 +615,43 @@
 
       <!-- TikTok Services Section -->
       <section id="tiktok" class="section">
-        <h2>TIKTOK BOOST SERVICES</h2>
+        <h2>🚀 TIKTOK BOOST SERVICES</h2>
         
+        <div class="service-status">
+          <div class="status-ready">🟢 SERVICES: READY FOR LAUNCH</div>
+        </div>
+
         <div class="service-instructions">
-          <h3>HOW TO USE:</h3>
+          <h3>⚡ QUICK START GUIDE:</h3>
           <ol>
             <li>Click any service button below</li>
-            <li>Service opens in full-screen mode</li>
+            <li>Service opens in <span class="highlight">new optimized window</span></li>
             <li>Follow instructions on the service website</li>
-            <li>Close when finished using the [X] button</li>
+            <li>Return to 404 Tech when finished</li>
+            <li><span class="highlight">Note:</span> Some services may require registration</li>
           </ol>
         </div>
 
         <div class="service-buttons">
-          <button class="service-btn likes" onclick="openTikTokService('likes')">
-            🚀 FREE LIKES
+          <button class="service-btn likes" onclick="launchTikTokService('likes')">
+            💖 FREE LIKES
           </button>
-          <button class="service-btn followers" onclick="openTikTokService('followers')">
-            👥 FREE FOLLOWERS
+          <button class="service-btn followers" onclick="launchTikTokService('followers')">
+            👥 FREE FOLLOWERS  
           </button>
-          <button class="service-btn views" onclick="openTikTokService('views')">
+          <button class="service-btn views" onclick="launchTikTokService('views')">
             👁️ FREE VIEWS
+          </button>
+          <button class="service-btn all" onclick="launchTikTokService('all')">
+            ⚡ ALL SERVICES
           </button>
         </div>
 
-        <div style="text-align: center; color: #00cc00; font-size: 0.9rem; margin-top: 15px;">
-          All services open directly within 404 Tech - No external tabs required
+        <div class="alternative-services">
+          <h4>🔧 ALTERNATIVE SERVICES:</h4>
+          <button class="alt-service-btn" onclick="launchAlternativeService('zefoy')">Zefoy</button>
+          <button class="alt-service-btn" onclick="launchAlternativeService('tokboost')">TokBoost</button>
+          <button class="alt-service-btn" onclick="launchAlternativeService('socialfollow')">SocialFollow</button>
         </div>
       </section>
 
@@ -698,7 +727,7 @@
 
         <div class="stat">
           <span>TIKTOK SERVICES:</span>
-          <span class="stat-value">READY</span>
+          <span id="tiktokStatus" class="stat-value">READY</span>
         </div>
         <div class="progress-bar">
           <div class="progress" style="width: 100%"></div>
@@ -848,13 +877,17 @@
     });
 
     // TikTok Services Logic
-    const tiktokModal = document.getElementById("tiktokModal");
-    const serviceFrame = document.getElementById("serviceFrame");
-    
-    function openTikTokService(type) {
+    function launchTikTokService(type) {
+      const button = event.target;
+      button.classList.add('launching');
+      
+      // Update status
+      document.getElementById('tiktokStatus').textContent = 'LAUNCHING';
+      document.querySelector('.status-ready').innerHTML = '🟡 SERVICE: LAUNCHING...';
+      
       let url = "https://nreer.com/";
       
-      // You can add different TikTok service URLs here based on the type
+      // Different service URLs
       switch(type) {
         case 'likes':
           url = "https://nreer.com/";
@@ -865,32 +898,56 @@
         case 'views':
           url = "https://nreer.com/";
           break;
+        case 'all':
+          url = "https://nreer.com/";
+          break;
         default:
           url = "https://nreer.com/";
       }
       
-      serviceFrame.src = url;
-      tiktokModal.classList.add("active");
+      // Open in new window with specific features
+      const serviceWindow = window.open(url, 'tiktokService', 
+        'width=800,height=600,scrollbars=yes,resizable=yes,toolbar=no,location=no,status=no');
       
-      // Update system monitor
-      document.querySelectorAll('.stat-value')[2].textContent = "ACTIVE";
-      document.querySelector('.progress').style.width = "100%";
+      if (serviceWindow) {
+        // Service opened successfully
+        setTimeout(() => {
+          document.getElementById('tiktokStatus').textContent = 'ACTIVE';
+          document.querySelector('.status-ready').innerHTML = '🔴 SERVICE: ACTIVE - Check new window';
+        }, 1000);
+      } else {
+        // Popup blocked
+        setTimeout(() => {
+          document.getElementById('tiktokStatus').textContent = 'BLOCKED';
+          document.querySelector('.status-ready').innerHTML = '❌ POPUP BLOCKED - Allow popups for 404 Tech';
+          alert('Popup blocked! Please allow popups for this website to use TikTok services.');
+        }, 1000);
+      }
+      
+      // Remove animation after completion
+      setTimeout(() => {
+        button.classList.remove('launching');
+      }, 500);
     }
     
-    function closeTikTokModal() {
-      tiktokModal.classList.remove("active");
-      serviceFrame.src = "";
-      
-      // Update system monitor
-      document.querySelectorAll('.stat-value')[2].textContent = "READY";
-    }
-
-    // Close modal when clicking outside
-    tiktokModal.addEventListener("click", function(e) {
-      if (e.target === tiktokModal) {
-        closeTikTokModal();
+    function launchAlternativeService(service) {
+      let url = "";
+      switch(service) {
+        case 'zefoy':
+          url = "https://zefoy.com/";
+          break;
+        case 'tokboost':
+          url = "https://tokboost.com/";
+          break;
+        case 'socialfollow':
+          url = "https://socialfollow.com/";
+          break;
+        default:
+          url = "https://zefoy.com/";
       }
-    });
+      
+      window.open(url, 'altService', 'width=800,height=600,scrollbars=yes,resizable=yes');
+    }
 
     // System monitor random updates
     setInterval(() => {
